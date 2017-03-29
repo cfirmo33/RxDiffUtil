@@ -21,22 +21,24 @@ Usage
 Convert any `Observable` to a `Completable` applying all changes as diff to the
 provided adapter.
 
-    service.observeData()
-           .subscribeOn(Schedulers.compute())
-           .onBackpressureLatest()
-           .to(RxDiffUtil.with(adapter))
-           .calculateDiff(callback))
-           .applyDiff(AdapterImpl::setUnsafe)
-           .subscribe();
-
+```java
+service.observeData()
+       .subscribeOn(Schedulers.compute())
+       .onBackpressureLatest()
+       .to(RxDiffUtil.with(adapter))
+       .calculateDiff(callback))
+       .applyDiff(AdapterImpl::setUnsafe)
+       .subscribe();
+```
 
 Installation
 ------------
 
 Add [JitPack][4] to your repositories and *RxDiffUtil* to the dependencies
 
-    compile "berlin.volders:rxdiffutil:$rxDiffUtilVersion"
-
+```groovy
+compile "berlin.volders:rxdiffutil:$rxDiffUtilVersion"
+```
 
 License
 -------
